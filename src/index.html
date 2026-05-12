@@ -1,129 +1,98 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <title>Home</title>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width" />
-        <link rel="stylesheet" href="styles.css" />
+        <meta charset="UTF-8" >
+        <meta name="viewport" content="width=device-width" >
+        <link rel="stylesheet" href="styles.css" >
         <script type="module" src="script.js"></script>
+        <script type="module" src="contact.js"></script>
     </head>
     <body>
+        <h1 style="display: none">header</h1>
+        <h2 style="display: none">header</h2>
         <pre></pre>
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
-        <br>
-        <br>
-        <br>
-        birger
+        <section class="projects">
+            <h3>Projects</h3>
+            <div class="projects">
+                <figure>
+                    <h3>Svelte</h3>
+                    <img
+                        src="https://raw.githubusercontent.com/sveltejs/svelte.dev/1d2ee65bbbfb1c4d39d221829487c107797a1a71/packages/site-kit/src/lib/branding/svelte-dark.svg"
+                        alt="Svelte Logo"
+                    >
+                    <img
+                        src="https://raw.githubusercontent.com/sveltejs/svelte.dev/1d2ee65bbbfb1c4d39d221829487c107797a1a71/packages/site-kit/src/lib/branding/svelte-dark.svg"
+                        alt="Svelte Logo"
+                    >
+                    <figcaption>
+                        <p>
+                            In 2024, I started contributing to
+                            <a href="https://svelte.dev">Svelte</a>, an open
+                            source web framework. After about 8 months of
+                            consistent contributions, I was invited to join the
+                            Svelte team as a maintainer. I have since continued
+                            contributing to Svelte and its related projects.
+                        </p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <h3>Bio-Shield</h3>
+                    <img
+                        src="https://bio-shield-website.vercel.app/static/logo.svg"
+                        alt="Bio-Shield Logo"
+                    >
+                    <img
+                        src="https://bio-shield-website.vercel.app/static/logo.svg"
+                        alt="Bio-Shield Log"
+                    >
+                    <figcaption>
+                        <p>
+                            In 2025, I co-led the development of a
+                            <a href="https://bio-shield-website.vercel.app"
+                                >website</a
+                            >
+                            for a fictitious insect repellent company, known as
+                            Bio-Shield, using modern web development paradigms
+                            such as server-side rendering, build-time
+                            optimization, and remote procedure calls, leveraging
+                            generative AI for assets.
+                        </p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="" alt="" >
+                    <figcaption>
+                        <h4></h4>
+                        <p></p>
+                    </figcaption>
+                </figure>
+                <figure>
+                    <img src="" alt="" >
+                    <figcaption>
+                        <h4></h4>
+                        <p></p>
+                    </figcaption>
+                </figure>
+            </div>
+        </section>
+        <section class="contact">
+            <h3>Contact Me</h3>
+            <div class="inputs">
+                <label for="name">Name</label>
+                <input type="text" maxlength="100" name="name" id="name" >
+                <label for="email">Email Address</label>
+                <input type="email" name="email" id="email" >
+                <label for="subject">Subject</label>
+                <input
+                    type="text"
+                    maxlength="100"
+                    name="subject"
+                    id="subject"
+                >
+            </div>
+            <textarea name="body" id="body"></textarea>
+            <button class="send">Send</button>
+        </section>
     </body>
 </html>

@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "checkJs": true,
+        "strict": true,
+        "module": "esnext",
+        "target": "esnext",
+        "allowUnreachableCode": false,
+        "allowUnusedLabels": false,
+        "noEmit": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "resolveJsonModule": true
+    },
+    "include": ["**/*.js", "**/*.mjs", "**/*.ts"]
+}

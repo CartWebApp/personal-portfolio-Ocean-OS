@@ -181,7 +181,7 @@ class Renderer {
         this.ctx.fillStyle = 'white';
         this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
         this.ctx.fillStyle = 'black';
-        this.ctx.font = `${size}px cursive`;
+        this.ctx.font = `${size}px monospace`;
         this.ctx.fillText(text, x, y, this.canvas.width);
         const data = this.ctx.getImageData(
             0,
@@ -223,7 +223,7 @@ renderer.shader = (/** @type {{ x: number; y: number }} */ point) => {
     }
     return '▒';
 };
-let x = Math.round(renderer.width * 0.35);
+let x = Math.round(renderer.width * 0.29);
 let y = Math.round(renderer.height / 2);
 let size = 50;
 let text = 'Andrew Nolt';
@@ -243,6 +243,12 @@ let mouse_x = 0;
 let mouse_y = 0;
 const path = [];
 const rect = pre.getBoundingClientRect();
+while (window.screenTop !== 0) {
+    scrollTo({
+        top: 0,
+        behavior: 'instant'
+    });
+}
 addEventListener(
     'mousemove',
     ({ clientX, clientY }) => {
@@ -264,7 +270,6 @@ addEventListener(
     { signal: abort_controller.signal }
 );
 addEventListener('scroll', () => {
-    // if (abort_controller.signal.aborted) return;
     const data = renderer.element.textContent
         .split('\n')
         .map(line => line.split(''));
@@ -281,9 +286,9 @@ addEventListener('scroll', () => {
                         y < min_threshold || y > innerHeight - min_threshold
                             ? '░'
                             : y < max_threshold ||
-                              y > innerHeight - max_threshold
-                            ? '▒'
-                            : '▓';
+                                y > innerHeight - max_threshold
+                              ? '▒'
+                              : '▓';
                 }
             }
         }

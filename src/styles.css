@@ -7,6 +7,7 @@ body {
     font-family: system-ui, sans-serif;
     color: black;
     background: black;
+    overflow-x: hidden;
 }
 
 nav {
@@ -53,9 +54,9 @@ pre {
     margin: 0;
     padding: 0;
     text-shadow: 10px 10px 5px #00000044;
-    filter: saturate(5.0);
+    filter: saturate(5);
     background-clip: text; /* https://grabient.com/LQJgdALAHAnANMAzGArBADAlqqeYgdgDY4JIVMjUJE4x0YT6Yo6Gn10C4BGeiHnRgoeQA?angle=135&steps=34 */
-/* 
+    /* 
     background: linear-gradient(
             135deg,
             #e1c3a7 0%,
@@ -93,9 +94,45 @@ pre {
             #3d00b6 96.97%,
             #3400ad 100%
         ) */
-         /* https://grabient.com/HQVgjADANAtALMAHAdmVYYSPQZjtEYHAThHRGICYoxhiT1I504cA2F09Y5MdZSjiA?angle=135&steps=34 */
+    /* https://grabient.com/HQVgjADANAtALMAHAdmVYYSPQZjtEYHAThHRGICYoxhiT1I504cA2F09Y5MdZSjiA?angle=135&steps=34 */
 
-background: linear-gradient(135deg, #2b6d0f 0.000%, #30721b 3.030%, #407628 6.061%, #597a34 9.091%, #777d41 12.121%, #977f4d 15.152%, #b48159 18.182%, #ca8365 21.212%, #d78470 24.242%, #d8847b 27.273%, #cd8485 30.303%, #b9838e 33.333%, #9d8297 36.364%, #7d809f 39.394%, #5e7ea7 42.424%, #447bad 45.455%, #3278b3 48.485%, #2b74b7 51.515%, #306fbb 54.545%, #406abd 57.576%, #5865bf 60.606%, #775fbf 63.636%, #9658bf 66.667%, #b351bd 69.697%, #ca49ba 72.727%, #d741b7 75.758%, #d839b2 78.788%, #ce30ad 81.818%, #b926a6 84.848%, #9d1c9f 87.879%, #7e1197 90.909%, #5f068e 93.939%, #450084 96.970%, #33007a 100.000%)
+    background: linear-gradient(
+            135deg,
+            #2b6d0f 0%,
+            #30721b 3.03%,
+            #407628 6.061%,
+            #597a34 9.091%,
+            #777d41 12.121%,
+            #977f4d 15.152%,
+            #b48159 18.182%,
+            #ca8365 21.212%,
+            #d78470 24.242%,
+            #d8847b 27.273%,
+            #cd8485 30.303%,
+            #b9838e 33.333%,
+            #9d8297 36.364%,
+            #7d809f 39.394%,
+            #5e7ea7 42.424%,
+            #447bad 45.455%,
+            #3278b3 48.485%,
+            #2b74b7 51.515%,
+            #306fbb 54.545%,
+            #406abd 57.576%,
+            #5865bf 60.606%,
+            #775fbf 63.636%,
+            #9658bf 66.667%,
+            #b351bd 69.697%,
+            #ca49ba 72.727%,
+            #d741b7 75.758%,
+            #d839b2 78.788%,
+            #ce30ad 81.818%,
+            #b926a6 84.848%,
+            #9d1c9f 87.879%,
+            #7e1197 90.909%,
+            #5f068e 93.939%,
+            #450084 96.97%,
+            #33007a 100%
+        )
         text;
     /* background: linear-gradient(
         135deg,
@@ -139,4 +176,89 @@ background: linear-gradient(135deg, #2b6d0f 0.000%, #30721b 3.030%, #407628 6.06
 
 p {
     word-wrap: break-word;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div.projects {
+    width: 80vw;
+    display: grid;
+    grid-template: repeat(2, 100vh) / repeat(2, auto);
+    justify-content: space-between;
+    align-content: space-between;
+    gap: 10vh;
+    & > :nth-child(2n) {
+        grid-column: 2;
+        transform: translateY(calc(100% + 10vh));
+    }
+    & > :nth-child(2n + 1) {
+        grid-column: 1;
+    }
+}
+
+figure {
+    max-height: 45vh;
+    min-height: 35vh;
+    width: clamp(24vw, 25vw, 26vw);
+    border: 1px #eee solid;
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.3rem;
+    background: #aa33ff11;
+    & > img:first-of-type {
+        filter: blur(1px) opacity(0);
+        transition: filter 0.5s ease-in;
+        &:hover,
+        &:is(*:hover > &) {
+            filter: blur(2px);
+        }
+    }
+    & > img:last-of-type {
+        z-index: 5;
+        margin-top: -30%;
+        margin-bottom: 30%;
+        position: relative;
+    }
+    & figcaption > p {
+        font-size: 0.9rem;
+    }
+    & figcaption {
+        z-index: 6;
+        margin-top: -30%;
+    }
+    & :is(h3, h4) {
+        padding-top: 0;
+        margin-top: 0;
+    }
+}
+
+a {
+    color: #aaaaff;
+}
+
+div.inputs {
+    display: grid;
+    grid-template: auto / repeat(2, auto);
+}
+
+textarea {
+    resize: none;
+    width: 18.05vw;
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    border: none;
+}
+
+body {
+    color: white;
+}
+
+input[type=text], input[type=email] {
+    border-radius: 0.3rem;
+    padding: 0.5rem;
+    border: none;
 }
