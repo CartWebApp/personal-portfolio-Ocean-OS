@@ -90,6 +90,8 @@ function encrypt(data, uuid) {
     return res.join('');
 }
 
+
+
 async function send() {
     const { get } = determine_storage_method();
     const uuid = /** @type {string} */ (await get());
@@ -121,3 +123,7 @@ async function send() {
 }
 
 submit.addEventListener('click', send);
+
+submit.parentElement?.addEventListener('input', () => {
+    submit.disabled = !(name.validity.valid && email.validity.valid && subject.validity.valid && body.value.length > 0);
+});

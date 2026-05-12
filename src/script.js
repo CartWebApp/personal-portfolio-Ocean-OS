@@ -208,10 +208,11 @@ class Renderer {
 }
 
 const width = parseFloat(getComputedStyle(pre).fontSize);
+const height = parseFloat(getComputedStyle(pre).lineHeight);
 
 const renderer = new Renderer(pre, {
-    width: Math.round(document.body.scrollWidth / (width * 0.55)),
-    height: Math.round(innerHeight / (width * 0.4))
+    width: innerWidth / (width * 0.5),
+    height: innerHeight / (height * 0.6)
 });
 
 renderer.shader = (/** @type {{ x: number; y: number }} */ point) => {
@@ -223,9 +224,9 @@ renderer.shader = (/** @type {{ x: number; y: number }} */ point) => {
     }
     return '▒';
 };
-let x = Math.round(renderer.width * 0.29);
-let y = Math.round(renderer.height / 2);
 let size = 50;
+let x = Math.round(renderer.width * 0.5 - size * 5);
+let y = Math.round(renderer.height / 2);
 let text = 'Andrew Nolt';
 const speed_range = 8;
 let delta_x = Math.round(Math.random() * speed_range - speed_range / 2);

@@ -55,47 +55,7 @@ pre {
     padding: 0;
     text-shadow: 10px 10px 5px #00000044;
     filter: saturate(5);
-    background-clip: text; /* https://grabient.com/LQJgdALAHAnANMAzGArBADAlqqeYgdgDY4JIVMjUJE4x0YT6Yo6Gn10C4BGeiHnRgoeQA?angle=135&steps=34 */
-    /* 
-    background: linear-gradient(
-            135deg,
-            #e1c3a7 0%,
-            #e1bdb0 3.03%,
-            #dfb7b9 6.061%,
-            #deb1c0 9.091%,
-            #dcaac8 12.121%,
-            #daa3cf 15.152%,
-            #d89bd5 18.182%,
-            #d594db 21.212%,
-            #d38be0 24.242%,
-            #d083e4 27.273%,
-            #cc7ae9 30.303%,
-            #c871ec 33.333%,
-            #c567ef 36.364%,
-            #c05df1 39.394%,
-            #bc53f3 42.424%,
-            #b748f5 45.455%,
-            #b23df5 48.485%,
-            #ad32f6 51.515%,
-            #a726f5 54.545%,
-            #a11af4 57.576%,
-            #9b0ef3 60.606%,
-            #9501f1 63.636%,
-            #8e00ee 66.667%,
-            #8700eb 69.697%,
-            #8000e7 72.727%,
-            #7800e3 75.758%,
-            #7100de 78.788%,
-            #6900d9 81.818%,
-            #6100d3 84.848%,
-            #5800cd 87.879%,
-            #5000c6 90.909%,
-            #4700be 93.939%,
-            #3d00b6 96.97%,
-            #3400ad 100%
-        ) */
-    /* https://grabient.com/HQVgjADANAtALMAHAdmVYYSPQZjtEYHAThHRGICYoxhiT1I504cA2F09Y5MdZSjiA?angle=135&steps=34 */
-
+    background-clip: text;
     background: linear-gradient(
             135deg,
             #2b6d0f 0%,
@@ -134,44 +94,12 @@ pre {
             #33007a 100%
         )
         text;
-    /* background: linear-gradient(
-        135deg,
-        #4159d0 0%,
-        #404cd7 3.03%,
-        #4241dd 6.061%,
-        #4436e3 9.091%,
-        #492de7 12.121%,
-        #4e25ea 15.152%,
-        #551fec 18.182%,
-        #5d1bed 21.212%,
-        #6518ed 24.242%,
-        #6f18ec 27.273%,
-        #7a1ae9 30.303%,
-        #851de5 33.333%,
-        #9123e0 36.364%,
-        #9d2ada 39.394%,
-        #aa33d4 42.424%,
-        #b63dcc 45.455%,
-        #c249c4 48.485%,
-        #ce55bc 51.515%,
-        #da63b3 54.545%,
-        #e470aa 57.576%,
-        #ee7ea1 60.606%,
-        #f78b99 63.636%,
-        #ff9890 66.667%,
-        #ffa589 69.697%,
-        #ffb082 72.727%,
-        #ffba7b 75.758%,
-        #ffc376 78.788%,
-        #ffca72 81.818%,
-        #ffcf6e 84.848%,
-        #ffd36c 87.879%,
-        #ffd46b 90.909%,
-        #ffd46c 93.939%,
-        #ffd16d 96.97%,
-        #ffcd70 100%
-    ) text; */
-    /* cursor: none; */
+}
+
+@media screen and (width <= 1000) {
+    pre {
+        font-size: 0.1rem;
+    }
 }
 
 p {
@@ -209,19 +137,21 @@ figure {
     padding: 0.4rem 0.6rem;
     border-radius: 0.3rem;
     background: #aa33ff11;
+    display: grid;
+    grid-template-columns: 1;
+    flex-direction: column;
     & > img:first-of-type {
         filter: blur(1px) opacity(0);
         transition: filter 0.5s ease-in;
         &:hover,
         &:is(*:hover > &) {
-            filter: blur(2px);
+            filter: blur(3px);
         }
     }
     & > img:last-of-type {
-        z-index: 5;
-        margin-top: -30%;
-        margin-bottom: 30%;
-        position: relative;
+        z-index: 1;
+        margin-top: -34%;
+        margin-bottom: 34%;
     }
     & figcaption > p {
         font-size: 0.9rem;
@@ -243,6 +173,8 @@ a {
 div.inputs {
     display: grid;
     grid-template: auto / repeat(2, auto);
+    gap: 0.5em;
+    padding: 0.5em;
 }
 
 textarea {
@@ -257,8 +189,9 @@ body {
     color: white;
 }
 
-input[type=text], input[type=email] {
+input[type='text'],
+input[type='email'] {
     border-radius: 0.3rem;
-    padding: 0.5rem;
+    padding: 0.3rem;
     border: none;
 }
