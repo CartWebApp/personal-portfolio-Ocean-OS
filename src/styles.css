@@ -131,7 +131,7 @@ div.projects {
 
 figure {
     max-height: 45vh;
-    min-height: 35vh;
+    min-height: 10vh;
     width: clamp(24vw, 25vw, 26vw);
     border: 1px #eee solid;
     padding: 0.4rem 0.6rem;
