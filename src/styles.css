@@ -129,10 +129,20 @@ div.projects {
     }
 }
 
+@media screen and (orientation: portrait) {
+    div.projects {
+	display: flex;
+	flex-direction: column;
+	& > * {
+	    transform: none !important;
+	}
+    }
+}
+
 figure {
-    max-height: 45vh;
+    max-height: clamp(30vh, 45vh, 60vh);
     min-height: 10vh;
-    width: clamp(24vw, 25vw, 26vw);
+    width: 30vw;
     border: 1px #eee solid;
     padding: 0.4rem 0.6rem;
     border-radius: 0.3rem;
@@ -154,7 +164,7 @@ figure {
         margin-bottom: 34%;
     }
     & figcaption > p {
-        font-size: 0.9rem;
+        font-size: clamp(10px, 0.9rem, 1rem);
     }
     & figcaption {
         z-index: 6;
@@ -163,6 +173,12 @@ figure {
     & :is(h3, h4) {
         padding-top: 0;
         margin-top: 0;
+    }
+}
+
+@media screen and (orientation: portrait) {
+    figure {
+	width: 80vw;
     }
 }
 
